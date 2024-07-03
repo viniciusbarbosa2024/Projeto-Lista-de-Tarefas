@@ -1,0 +1,61 @@
+@charset "UTF-8";
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    
+    background-color: rgb(10, 10, 10);
+    
+}
+
+main {
+    width: 500px;
+    padding: 10px;
+
+    margin-top: 50px;
+    
+    background-color: rgb(50, 50, 50);
+    border-radius: 10px;
+}
+
+main h1 {
+    
+    text-align: center;
+
+    color: #fafafa;
+    font-size: 1.5em;
+}
+
+main #tarefas p {
+    padding: 10px;
+
+    text-align: center;
+}
+
+main #botaoAdicionarTarefa {
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: auto;
+
+    background-color: rgb(30,30,30);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+main #botaoAdicionarTarefa span {
+    font-size: 1.5em;
+    
+    color: #fafafa;
+}
