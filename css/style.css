@@ -25,6 +25,10 @@ main {
     border-radius: 10px;
 }
 
+main.ocultar {
+    display: none;
+}
+
 main h1 {
     
     text-align: center;
@@ -59,3 +63,28 @@ main #botaoAdicionarTarefa span {
     
     color: #fafafa;
 }
+
+#telaAdicionarTarefa {
+    width: 500px;
+    padding: 10px;
+
+    display: none;
+
+    margin-top: 50px;
+    
+    background-color: rgb(50, 50, 50);
+    border-radius: 10px;
+}
+
+#telaAdicionarTarefa.abrir {
+    display: block;
+}
+
+#telaAdicionarTarefa h1 {
+    text-align: center;
+
+    color: #fafafa;
+    font-size: 1.5em;
+}
+
+
