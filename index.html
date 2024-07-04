@@ -9,8 +9,12 @@
 <body>
     <main>
         <h1>Lista de tarefas</h1>
-        <div id="tarefas">
-            <p>Ainda não há tarefas adicionadas</p>
+        <div id="conteinerTarefas">
+            <ul id="tarefas">
+                <li>a</li>
+                <li>b</li>
+                <li>c</li>
+            </ul>
         </div>
         <div id="botaoAdicionarTarefa" onclick="adicionarTarefa()">
             <span>+</span>    
@@ -20,7 +24,7 @@
     <div id="telaAdicionarTarefa">
         <h1>Adicionar tarefa</h1>
         <div>
-            <input type="text" name="tituloTarefa" id="tituloTarefa" placeholder="Titulo">
+            <input type="text" name="tituloTarefa" id="tituloTarefa" placeholder="Titulo" required>
         </div>
 
         <div>
@@ -31,7 +35,7 @@
             <input type="text" name="descricaoTarefa" id="descricaoTarefa" placeholder="Adicionar detalhes">
         </div>
 
-        <input type="button" value="Salvar" onclick="salvarTarefa()">
+        <input type="button" value="Salvar" id="botaoSalvar">
     </div>
     
 <script src="js/script.js"></script>

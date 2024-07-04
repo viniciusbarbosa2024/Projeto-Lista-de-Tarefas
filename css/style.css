@@ -37,11 +37,27 @@ main h1 {
     font-size: 1.5em;
 }
 
-main #tarefas p {
+main #conteinerTarefas p {
     padding: 10px;
 
     text-align: center;
 }
+
+main #tarefas {
+    list-style: none;
+}
+
+main #tarefas li {
+    padding: 10px;
+
+    margin: 10px 0px;
+
+    border-radius: 10px;
+
+    background-color: rgb(30,30,30);
+    color: #fafafa;
+}
+
 
 main #botaoAdicionarTarefa {
     width: 50px;

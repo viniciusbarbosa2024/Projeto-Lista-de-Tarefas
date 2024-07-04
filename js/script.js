@@ -1,5 +1,7 @@
 const main = document.getElementsByTagName('main')[0]
 const telaAdicionarTarefa = document.getElementById('telaAdicionarTarefa')
+const tituloTarefa = document.getElementById('tituloTarefa')
+const botaoSalvar = document.getElementById('botaoSalvar')
 
 function salvarTarefa() {
     telaAdicionarTarefa.classList.remove('abrir')
@@ -12,5 +14,7 @@ function adicionarTarefa() {
 
     main.classList.add('ocultar')
 
+    botaoSalvar.addEventListener('click',salvarTarefa)
     
+     
 }
