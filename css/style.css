@@ -93,16 +93,35 @@ main #botaoAdicionarTarefa span {
 }
 
 #telaAdicionarTarefa.abrir {
+    display: block;
+}
+
+#telaAdicionarTarefa form {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
-#telaAdicionarTarefa h1 {
-    text-align: center;
+#telaAdicionarTarefa #tituloEbotaoFecharAba {
+    margin-bottom: 20px;
 
+    display: flex;
+    justify-content: space-between;
+}
+
+
+#telaAdicionarTarefa #tituloEbotaoFecharAba h1 {
     color: #fafafa;
     font-size: 1.5em;
+}
+
+#telaAdicionarTarefa #tituloEbotaoFecharAba span {
+    margin-top: -8px;
+
+    font-size: 1.5em;
+    cursor: pointer;
+
+    color: #fafafa;
 }
 
 
