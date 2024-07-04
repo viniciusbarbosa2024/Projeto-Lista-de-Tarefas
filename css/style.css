@@ -50,6 +50,9 @@ main #tarefas {
 main #tarefas li {
     padding: 10px;
 
+    display: flex;
+    justify-content: space-between;
+
     margin: 10px 0px;
 
     border-radius: 10px;
