@@ -1,4 +1,5 @@
 const main = document.getElementsByTagName('main')[0]
+const pNaoHaTarefas = document.getElementById('NaoHaTarefas')
 const listaTarefas = document.getElementById('tarefas')
 const telaAdicionarTarefa = document.getElementById('telaAdicionarTarefa')
 const botaoFecharTelaAdicionarTarefa =document.getElementById('botaoFecharTelaAdicionarTarefa')
@@ -33,6 +34,7 @@ function salvarTarefa() {
         tituloTarefa.focus()
     } else {
         FecharTelaAdicionarTarefa()
+        pNaoHaTarefas.style.display = 'none'
 
         //Criar tarefa na página inicial
             const criarLi = document.createElement('li')
@@ -46,10 +48,10 @@ function salvarTarefa() {
                 //Anotar sobre lastElementChild
             }
 
-            //Acessando o span[0] do li criado
+            //Acessando o span[0] do li criado para colocar o título da tarefa
             listaTarefas.lastElementChild.children[0].innerHTML = tituloTarefa.value
 
-            //Acessando o span[1] do li criado
+            //Acessando o span[1] do li criado para colocar o horário da tarefa
             listaTarefas.lastElementChild.children[1].innerHTML = horarioTarefa.value
      
         //Ordenar as tarefas adicionadas de acordo com o horário    
