@@ -12,29 +12,37 @@ function FecharTelaAdicionarTarefa() {
     main.classList.remove('ocultar')
 }
 
+function ordenarTarefa() {
+    //Ordena as tarefas em relação ao horário
+    const orderHorario = Number(horarioTarefa.value.charAt(0) + horarioTarefa.value.charAt(1) + horarioTarefa.value.charAt(3) + horarioTarefa.value.charAt(4))
+
+    listaTarefas.lastElementChild.setAttribute('style',`order: ${orderHorario}`)
+    
+    //Ver se tá tudo ok
+}
+
 function salvarTarefa() {
     FecharTelaAdicionarTarefa()
 
     //Criar tarefa na página inicial
-    const criarLi = document.createElement('li')
-    listaTarefas.appendChild(criarLi)
+        const criarLi = document.createElement('li')
+        listaTarefas.appendChild(criarLi)
 
-    
-    for (let c = 1;c<=2;c++) {
-        const criarSpan = document.createElement('span')
+        
+        for (let c = 1;c<=2;c++) {
+            const criarSpan = document.createElement('span')
 
-        listaTarefas.lastElementChild.appendChild(criarSpan)
-        //Anotar sobre lastElementChild
-    }
+            listaTarefas.lastElementChild.appendChild(criarSpan)
+            //Anotar sobre lastElementChild
+        }
 
-    //Acessando o span[0] do li criado
-    listaTarefas.lastElementChild.children[0].innerHTML = tituloTarefa.value
+        //Acessando o span[0] do li criado
+        listaTarefas.lastElementChild.children[0].innerHTML = tituloTarefa.value
 
-    //Acessando o span[1] do li criado
-    listaTarefas.lastElementChild.children[1].innerHTML = horarioTarefa.value
-    
-
+        //Acessando o span[1] do li criado
+        listaTarefas.lastElementChild.children[1].innerHTML = horarioTarefa.value
      
+        ordenarTarefa()
 }
 
 function adicionarTarefa() {
@@ -45,6 +53,7 @@ function adicionarTarefa() {
     
     botaoFecharTelaAdicionarTarefa.addEventListener('click',FecharTelaAdicionarTarefa)
     botaoSalvar.addEventListener('click',salvarTarefa)
+    
     
      
 }
