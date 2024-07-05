@@ -63,6 +63,9 @@ function salvarTarefa() {
 
 function adicionarTarefa() {
     AbrirTelaAdicionarTarefa()
+
+    tituloTarefa.value = ""
+    horarioTarefa.value = ""
     
     botaoFecharTelaAdicionarTarefa.addEventListener('click',FecharTelaAdicionarTarefa)
 
