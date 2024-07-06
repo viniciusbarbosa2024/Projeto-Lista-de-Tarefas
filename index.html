@@ -21,7 +21,7 @@
     </main>
 
     <div id="telaAdicionarTarefa">
-        <div id="tituloEbotaoFecharAba">
+        <div id="tituloEbotaoFecharTelaAdicionarTarefa">
             <h1>Adicionar tarefa</h1>
             <span id="botaoFecharTelaAdicionarTarefa">x</span>
         </div>
@@ -33,9 +33,26 @@
             <div>
                 <input type="time" name="horarioTarefa" id="horarioTarefa">
             </div>
+
+            <div>
+                <input type="text" name="descricaoTarefa" id="descricaoTarefa" placeholder="Descrição">
+            </div>
             
             <input type="button" value="Salvar" id="botaoSalvar">
         </form>
+    </div>
+
+    <div id="telaAcessoTarefa">
+        <div id="tituloEbotaoFecharTelaAcessoTarefa">
+            <h1 id="tituloTarefaAdicionada">Tarefa</h1>
+            <span id="botaoFecharTelaAcessoTarefa">x</span>
+        </div>
+
+        <div id="descricaoTarefaAdicionada">
+            
+        </div>
+
+        <input type="button" value="Excluir tarefa">
     </div>
     
 <script src="js/script.js"></script>

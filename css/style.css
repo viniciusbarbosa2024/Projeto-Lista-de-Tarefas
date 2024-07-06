@@ -60,6 +60,7 @@ main #tarefas li {
     margin: 10px 0px;
 
     border-radius: 10px;
+    cursor: pointer;
 
     background-color: rgb(30,30,30);
     color: #fafafa;
@@ -109,7 +110,7 @@ main #botaoAdicionarTarefa span {
     gap: 20px;
 }
 
-#telaAdicionarTarefa #tituloEbotaoFecharAba {
+#telaAdicionarTarefa #tituloEbotaoFecharTelaAdicionarTarefa {
     margin-bottom: 20px;
 
     display: flex;
@@ -117,12 +118,12 @@ main #botaoAdicionarTarefa span {
 }
 
 
-#telaAdicionarTarefa #tituloEbotaoFecharAba h1 {
+#telaAdicionarTarefa #tituloEbotaoFecharTelaAdicionarTarefa h1 {
     color: #fafafa;
     font-size: 1.5em;
 }
 
-#telaAdicionarTarefa #tituloEbotaoFecharAba span {
+#telaAdicionarTarefa #tituloEbotaoFecharTelaAdicionarTarefa span {
     margin-top: -8px;
 
     font-size: 1.5em;
@@ -163,6 +164,80 @@ main #botaoAdicionarTarefa span {
 #telaAdicionarTarefa input[type="button"]:hover {
     text-decoration: underline;
 }
+
+#telaAcessoTarefa {
+    width: 500px;
+    padding: 10px;
+
+    display: none;
+
+    margin-top: 50px;
+    
+    background-color: rgb(50, 50, 50);
+    border-radius: 10px;
+}
+
+
+#telaAcessoTarefa.abrir {
+    display: block;
+}
+
+#telaAcessoTarefa #tituloEbotaoFecharTelaAcessoTarefa {
+    margin-bottom: 10px;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+#telaAcessoTarefa #tituloEbotaoFecharTelaAcessoTarefa h1 {
+    color: #fafafa;
+    
+    font-size: 1.5em;
+}
+
+#telaAcessoTarefa #tituloEbotaoFecharTelaAcessoTarefa span {
+    margin-top: -8px;
+
+    font-size: 1.5em;
+    cursor: pointer;
+
+    color: #fafafa;
+}
+
+#telaAcessoTarefa #descricaoTarefaAdicionada {
+    padding: 10px;
+
+    margin-bottom: 10px;
+
+    border-radius: 10px;
+    
+    background-color: rgb(30,30,30);
+}
+
+#telaAcessoTarefa #descricaoTarefaAdicionada span {
+    padding: 10px;
+   
+    color: #fafafa;
+
+    font-weight: bold;
+}
+
+#telaAcessoTarefa #descricaoTarefaAdicionada p {
+    padding: 10px;
+}
+
+#telaAcessoTarefa input[type="button"] {
+    width: 100px;
+    padding: 5px;
+
+    border-radius: 5px;
+    border: 0px;
+    cursor: pointer;
+}
+
+
+
+
 
 
 

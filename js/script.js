@@ -5,7 +5,13 @@ const telaAdicionarTarefa = document.getElementById('telaAdicionarTarefa')
 const botaoFecharTelaAdicionarTarefa =document.getElementById('botaoFecharTelaAdicionarTarefa')
 const tituloTarefa = document.getElementById('tituloTarefa')
 const horarioTarefa = document.getElementById('horarioTarefa')
+const descricaoTarefa = document.getElementById('descricaoTarefa')
 const botaoSalvar = document.getElementById('botaoSalvar')
+const telaAcessoTarefa = document.getElementById('telaAcessoTarefa')
+const botaoFecharTelaAcessoTarefa = document.getElementById('botaoFecharTelaAcessoTarefa')
+const tituloTarefaAdicionada = document.getElementById('tituloTarefaAdicionada')
+const descricaoTarefaAdicionada = document.getElementById('descricaoTarefaAdicionada')
+
 
 function FecharTelaAdicionarTarefa() {
     telaAdicionarTarefa.classList.remove('abrir')
@@ -17,6 +23,18 @@ function AbrirTelaAdicionarTarefa() {
     telaAdicionarTarefa.classList.add('abrir') //Anotar sobre classList.add
 
     main.classList.add('ocultar')
+}
+
+function AbrirTelaAcessoTarefa() {
+    telaAcessoTarefa.classList.add('abrir')
+
+    main.classList.add('ocultar')
+}
+
+function FecharTelaAcessoTarefa() {
+    telaAcessoTarefa.classList.remove('abrir')
+
+    main.classList.remove('ocultar')
 }
 
 
@@ -38,6 +56,8 @@ function salvarTarefa() {
 
         //Criar tarefa na página inicial
             const criarLi = document.createElement('li')
+            //li criado com evento de clique para a função de acesso a tarefa(function acessarTarefa())
+            criarLi.setAttribute('onclick',`acessarTarefa("${tituloTarefa.value}","${descricaoTarefa.value}")`)
             listaTarefas.appendChild(criarLi)
 
             
@@ -66,6 +86,7 @@ function adicionarTarefa() {
 
     tituloTarefa.value = ""
     horarioTarefa.value = ""
+    descricaoTarefa.value = ""
     
     botaoFecharTelaAdicionarTarefa.addEventListener('click',FecharTelaAdicionarTarefa)
 
@@ -74,3 +95,18 @@ function adicionarTarefa() {
     
      
 }
+
+function acessarTarefa(titulo,descricao) {
+    tituloTarefaAdicionada.innerHTML = titulo
+    
+    if (descricao == "") {
+        descricao = "Sem descrição"
+    }
+
+    descricaoTarefaAdicionada.innerHTML = `<span>Descrição:</span><p>${descricao}</p>`
+    
+    AbrirTelaAcessoTarefa()
+
+    botaoFecharTelaAcessoTarefa.addEventListener('click',FecharTelaAcessoTarefa)
+}
+
