@@ -107,7 +107,11 @@ function excluirTarefa(titulo) {
     tarefaParaExclusao.remove() //Anotar sobre remove()
     nomesDasTarefas.splice(nomesDasTarefas.indexOf(titulo),1) //Anotar sobre splice
 
-    window.alert(nomesDasTarefas)
+    FecharTelaAcessoTarefa()
+
+    if (listaTarefas.children[0] == undefined) {
+        pNaoHaTarefas.style.display = 'block'
+    }
 }
 
 function acessarTarefa(titulo,descricao) {
