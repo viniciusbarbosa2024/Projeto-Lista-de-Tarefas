@@ -11,6 +11,9 @@ const telaAcessoTarefa = document.getElementById('telaAcessoTarefa')
 const botaoFecharTelaAcessoTarefa = document.getElementById('botaoFecharTelaAcessoTarefa')
 const tituloTarefaAdicionada = document.getElementById('tituloTarefaAdicionada')
 const descricaoTarefaAdicionada = document.getElementById('descricaoTarefaAdicionada')
+const botaoExcluirTarefa = document.getElementById('botaoExcluirTarefa')
+
+const nomesDasTarefas = []
 
 
 function FecharTelaAdicionarTarefa() {
@@ -54,6 +57,9 @@ function salvarTarefa() {
         FecharTelaAdicionarTarefa()
         pNaoHaTarefas.style.display = 'none'
 
+        //Guardar o nome da tarefa no vetor nomeDasTarefas
+        nomesDasTarefas.push(tituloTarefa.value)
+
         //Criar tarefa na página inicial
             const criarLi = document.createElement('li')
             //li criado com evento de clique para a função de acesso a tarefa(function acessarTarefa())
@@ -96,6 +102,14 @@ function adicionarTarefa() {
      
 }
 
+function excluirTarefa(titulo) {
+    const tarefaParaExclusao = listaTarefas.children[nomesDasTarefas.indexOf(titulo)]
+    tarefaParaExclusao.remove() //Anotar sobre remove()
+    nomesDasTarefas.splice(nomesDasTarefas.indexOf(titulo),1) //Anotar sobre splice
+
+    window.alert(nomesDasTarefas)
+}
+
 function acessarTarefa(titulo,descricao) {
     tituloTarefaAdicionada.innerHTML = titulo
     
@@ -108,5 +122,8 @@ function acessarTarefa(titulo,descricao) {
     AbrirTelaAcessoTarefa()
 
     botaoFecharTelaAcessoTarefa.addEventListener('click',FecharTelaAcessoTarefa)
+    botaoExcluirTarefa.addEventListener('click',()=>excluirTarefa(titulo)) //Anotar sobre passagem de parâmetro via addEventListener
+
 }
+
 
