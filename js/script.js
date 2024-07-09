@@ -25,6 +25,11 @@ const telaAcessoTarefa = {
     botaoExcluirTarefa: document.getElementById('botaoExcluirTarefa')
 }
 
+telaAdicionarTarefa.botaoFechar.addEventListener('click',() => fecharTela(telaAdicionarTarefa))
+telaAdicionarTarefa.botaoSalvar.addEventListener('click',salvarTarefa)
+
+telaAcessoTarefa.botaoFechar.addEventListener('click',() => fecharTela(telaAcessoTarefa))
+telaAcessoTarefa.botaoExcluirTarefa.addEventListener('click',()=>excluirTarefa(telaAcessoTarefa.título.innerHTML))
 
 const nomesDasTarefas = []
 
@@ -86,7 +91,6 @@ function salvarTarefa() {
             ordenarTarefa()
     }
     
-    
 }
 
 function adicionarTarefa() {
@@ -95,12 +99,6 @@ function adicionarTarefa() {
     telaAdicionarTarefa.txtTarefa.título.value = ""
     telaAdicionarTarefa.txtTarefa.horário.value = ""
     telaAdicionarTarefa.txtTarefa.descricao.value = ""
-    
-    telaAdicionarTarefa.botaoFechar.addEventListener('click',() => fecharTela(telaAdicionarTarefa))
-
-    telaAdicionarTarefa.botaoSalvar.addEventListener('click',salvarTarefa)
-    
-    
      
 }
 
@@ -126,9 +124,6 @@ function acessarTarefa(titulo,descricao) {
     telaAcessoTarefa.descricao.innerHTML = `<span>Descrição:</span><p>${descricao}</p>`
     
     abrirTela(telaAcessoTarefa)
-
-    telaAcessoTarefa.botaoFechar.addEventListener('click',() => fecharTela(telaAcessoTarefa))
-    telaAcessoTarefa.botaoExcluirTarefa.addEventListener('click',()=>excluirTarefa(titulo)) //Anotar sobre passagem de parâmetro via addEventListener
 
 }
 
