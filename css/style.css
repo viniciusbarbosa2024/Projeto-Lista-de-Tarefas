@@ -10,19 +10,18 @@
 body {
     display: flex;
     justify-content: center;
-    
-    background-color: rgb(10, 10, 10);
-    
+    align-items: center;
+    height: 100vh;
+    background-color: #1a1a1a;
 }
 
 main {
     width: 500px;
-    padding: 10px;
-
+    padding: 20px;
     margin-top: 50px;
-    
-    background-color: rgb(50, 50, 50);
+    background-color: #333;
     border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 main.ocultar {
@@ -30,74 +29,73 @@ main.ocultar {
 }
 
 main h1 {
-    
     text-align: center;
-
     color: #fafafa;
-    font-size: 1.5em;
+    font-size: 2em;
+    margin-bottom: 20px;
 }
 
 main #conteinerTarefas p {
     padding: 10px;
-
     text-align: center;
+    color: #999;
 }
 
 main #tarefas {
-    display: flex;
-    flex-direction: column;
-   
     list-style: none;
-    
+    padding: 0;
 }
 
 main #tarefas li {
-    padding: 10px;
-
+    padding: 15px;
     display: flex;
     justify-content: space-between;
-
-    margin: 10px 0px;
-
-    border-radius: 10px;
-    cursor: pointer;
-
-    background-color: rgb(30,30,30);
+    align-items: center;
+    margin: 10px 0;
+    border-radius: 8px;
+    background-color: #444;
     color: #fafafa;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
+main #tarefas li:hover {
+    background-color: #555;
+    transform: translateY(-2px);
+}
 
 main #botaoAdicionarTarefa {
     width: 50px;
     height: 50px;
-
     display: flex;
     justify-content: center;
     align-items: center;
-
-    margin: auto;
-
-    background-color: rgb(30,30,30);
+    margin: 20px auto;
+    background-color: #007bff;
     border-radius: 50%;
     cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+main #botaoAdicionarTarefa:hover {
+    background-color: #0056b3;
+    transform: scale(1.1);
 }
 
 main #botaoAdicionarTarefa span {
-    font-size: 1.5em;
-    
-    color: #fafafa;
+    font-size: 2em;
+    color: #ffffff;
 }
 
 #telaAdicionarTarefa {
     width: 500px;
-    padding: 10px;
-
+    padding: 20px;
     display: none;
-
     margin-top: 50px;
-    
-    background-color: rgb(50, 50, 50);
+    background-color: #333;
     border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 #telaAdicionarTarefa.abrir {
@@ -111,12 +109,11 @@ main #botaoAdicionarTarefa span {
 }
 
 #telaAdicionarTarefa #tituloEbotaoFecharTelaAdicionarTarefa {
-    margin-bottom: 20px;
-
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
 }
-
 
 #telaAdicionarTarefa #tituloEbotaoFecharTelaAdicionarTarefa h1 {
     color: #fafafa;
@@ -124,122 +121,104 @@ main #botaoAdicionarTarefa span {
 }
 
 #telaAdicionarTarefa #tituloEbotaoFecharTelaAdicionarTarefa span {
-    margin-top: -8px;
-
     font-size: 1.5em;
     cursor: pointer;
-
-    color: #fafafa;
+    color: #007bff;
+    transition: color 0.3s ease;
 }
 
+#telaAdicionarTarefa #tituloEbotaoFecharTelaAdicionarTarefa span:hover {
+    color: #0056b3;
+}
 
-#telaAdicionarTarefa input[type="text"] {
-    width: 300px;
-    padding: 5px;
-
+#telaAdicionarTarefa input[type="text"], #telaAdicionarTarefa input[type="time"] {
+    padding: 10px;
     border-radius: 5px;
-    border: 0px;
-    
-    background-color: rgb(30,30,30);
-}
-
-#telaAdicionarTarefa input[type="time"] {
-    padding: 5px;
-    
-    border: 0px;
-    
-    background-color: rgb(30,30,30);
-    color: white;
+    border: 1px solid #444;
+    background-color: #555;
+    color: #fafafa;
 }
 
 #telaAdicionarTarefa input[type="button"] {
     width: 100px;
-    padding: 5px;
-
+    padding: 10px;
     border-radius: 5px;
-    border: 0px;
-
+    border: none;
+    background-color: #007bff;
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 #telaAdicionarTarefa input[type="button"]:hover {
-    text-decoration: underline;
+    background-color: #0056b3;
 }
 
 #telaAcessoTarefa {
     width: 500px;
-    padding: 10px;
-
+    padding: 20px;
     display: none;
-
     margin-top: 50px;
-    
-    background-color: rgb(50, 50, 50);
+    background-color: #333;
     border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-
 
 #telaAcessoTarefa.abrir {
     display: block;
 }
 
 #telaAcessoTarefa #tituloEbotaoFecharTelaAcessoTarefa {
-    margin-bottom: 10px;
-
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
 }
 
 #telaAcessoTarefa #tituloEbotaoFecharTelaAcessoTarefa h1 {
     color: #fafafa;
-    
     font-size: 1.5em;
 }
 
 #telaAcessoTarefa #tituloEbotaoFecharTelaAcessoTarefa span {
-    margin-top: -8px;
-
     font-size: 1.5em;
     cursor: pointer;
-
-    color: #fafafa;
+    color: #007bff;
+    transition: color 0.3s ease;
 }
 
-#telaAcessoTarefa #descricaoTarefaAdicionada {
-    padding: 10px;
+#telaAcessoTarefa #tituloEbotaoFecharTelaAcessoTarefa span:hover {
+    color: #0056b3;
+}
 
-    margin-bottom: 10px;
-
+#descricaoTarefaAdicionada {
+    padding: 20px;
+    margin-bottom: 20px;
     border-radius: 10px;
-    
-    background-color: rgb(30,30,30);
+    background-color: #444;
+    color: #fafafa;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-#telaAcessoTarefa #descricaoTarefaAdicionada span {
-    padding: 10px;
-   
-    color: #fafafa;
-
+#descricaoTarefaAdicionada span {
     font-weight: bold;
 }
 
-#telaAcessoTarefa #descricaoTarefaAdicionada p {
-    padding: 10px;
+#descricaoTarefaAdicionada p {
+    margin-top: 10px;
 }
 
 #telaAcessoTarefa input[type="button"] {
     width: 100px;
-    padding: 5px;
-
+    padding: 10px;
     border-radius: 5px;
-    border: 0px;
+    border: none;
+    background-color: #007bff;
+    color: #ffffff;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-
-
-
-
-
-
-
-
+#telaAcessoTarefa input[type="button"]:hover {
+    background-color: #0056b3;
+}
