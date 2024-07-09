@@ -78,7 +78,6 @@ function salvarTarefa() {
                 const criarSpan = document.createElement('span')
 
                 main.listaTarefas.lastElementChild.appendChild(criarSpan)
-                //Anotar sobre lastElementChild
             }
 
             //Acessando o span[0] do li criado para colocar o título da tarefa
@@ -104,8 +103,8 @@ function adicionarTarefa() {
 
 function excluirTarefa(titulo) {
     const tarefaParaExclusao = main.listaTarefas.children[nomesDasTarefas.indexOf(titulo)]
-    tarefaParaExclusao.remove() //Anotar sobre remove()
-    nomesDasTarefas.splice(nomesDasTarefas.indexOf(titulo),1) //Anotar sobre splice
+    tarefaParaExclusao.remove()
+    nomesDasTarefas.splice(nomesDasTarefas.indexOf(titulo),1)
 
     fecharTela(telaAcessoTarefa)
 
