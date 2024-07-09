@@ -8,15 +8,14 @@ const main = {
 const telaAdicionarTarefa = {
     conteiner: document.getElementById('telaAdicionarTarefa'),
     botaoFechar: document.getElementById('botaoFecharTelaAdicionarTarefa'),
-    botaoSalvar: document.getElementById('botaoSalvar')
+    txtTarefa: {
+        título: document.getElementById('tituloTarefa'),
+        horário: document.getElementById('horarioTarefa'),
+        descricao: document.getElementById('descricaoTarefa')
+    },
+    botaoSalvar: document.getElementById('botaoSalvar'),
 }
 
-
-const txtTarefa = {
-    título: document.getElementById('tituloTarefa'),
-    horário: document.getElementById('horarioTarefa'),
-    descricao: document.getElementById('descricaoTarefa')
-}
 
 const telaAcessoTarefa = {
     conteiner: document.getElementById('telaAcessoTarefa'),
@@ -58,16 +57,16 @@ function FecharTelaAcessoTarefa() {
 
 function ordenarTarefa() {
     //Ordena as tarefas em relação ao horário
-    const orderHorario = Number(txtTarefa.horário.value.charAt(0) + txtTarefa.horário.value.charAt(1) + txtTarefa.horário.value.charAt(3) + txtTarefa.horário.value.charAt(4))
+    const orderHorario = Number(telaAdicionarTarefa.txtTarefa.horário.value.charAt(0) + telaAdicionarTarefa.txtTarefa.horário.value.charAt(1) + telaAdicionarTarefa.txtTarefa.horário.value.charAt(3) + telaAdicionarTarefa.txtTarefa.horário.value.charAt(4))
 
     main.listaTarefas.lastElementChild.setAttribute('style',`order: ${orderHorario}`)
     
 }
 
 function salvarTarefa() {
-    if (txtTarefa.título.value == "") {
+    if (telaAdicionarTarefa.txtTarefa.título.value == "") {
         window.alert('O título da tarefa é obrigatório')
-        txtTarefa.título.focus()
+        telaAdicionarTarefa.txtTarefa.título.focus()
     } else {
         FecharTelaAdicionarTarefa()
         main.pNaoHaTarefas.style.display = 'none'
@@ -78,7 +77,7 @@ function salvarTarefa() {
         //Criar tarefa na página inicial
             const criarLi = document.createElement('li')
             //li criado com evento de clique para a função de acesso a tarefa(function acessarTarefa())
-            criarLi.setAttribute('onclick',`acessarTarefa("${txtTarefa.título.value}","${txtTarefa.descricao.value}")`)
+            criarLi.setAttribute('onclick',`acessarTarefa("${telaAdicionarTarefa.txtTarefa.título.value}","${telaAdicionarTarefa.txtTarefa.descricao.value}")`)
             main.listaTarefas.appendChild(criarLi)
 
             
@@ -90,10 +89,10 @@ function salvarTarefa() {
             }
 
             //Acessando o span[0] do li criado para colocar o título da tarefa
-            main.listaTarefas.lastElementChild.children[0].innerHTML = txtTarefa.título.value
+            main.listaTarefas.lastElementChild.children[0].innerHTML = telaAdicionarTarefa.txtTarefa.título.value
 
             //Acessando o span[1] do li criado para colocar o horário da tarefa
-            main.listaTarefas.lastElementChild.children[1].innerHTML = txtTarefa.horário.value
+            main.listaTarefas.lastElementChild.children[1].innerHTML = telaAdicionarTarefa.txtTarefa.horário.value
      
         //Ordenar as tarefas adicionadas de acordo com o horário    
             ordenarTarefa()
@@ -105,9 +104,9 @@ function salvarTarefa() {
 function adicionarTarefa() {
     AbrirTelaAdicionarTarefa()
 
-    txtTarefa.título.value = ""
-    txtTarefa.horário.value = ""
-    txtTarefa.descricao.value = ""
+    telaAdicionarTarefa.txtTarefa.título.value = ""
+    telaAdicionarTarefa.txtTarefa.horário.value = ""
+    telaAdicionarTarefa.txtTarefa.descricao.value = ""
     
     telaAdicionarTarefa.botaoFechar.addEventListener('click',FecharTelaAdicionarTarefa)
 
