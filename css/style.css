@@ -44,6 +44,8 @@ main #conteinerTarefas p {
 main #tarefas {
     list-style: none;
     padding: 0;
+    display: flex;
+    flex-direction: column;
 }
 
 main #tarefas li {
