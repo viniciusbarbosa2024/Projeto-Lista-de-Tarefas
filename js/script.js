@@ -29,6 +29,18 @@ const telaAcessoTarefa = {
 
 const nomesDasTarefas = []
 
+function fecharTela(tela) {
+    tela.conteiner.classList.remove('abrir')
+
+    main.conteiner.classList.remove('ocultar')
+}
+
+function abrirTela(tela) {
+    tela.conteiner.classList.add('abrir')
+
+    main.conteiner.classList.add('ocultar')
+}
+
 
 function FecharTelaAdicionarTarefa() {
     telaAdicionarTarefa.conteiner.classList.remove('abrir')
@@ -36,17 +48,6 @@ function FecharTelaAdicionarTarefa() {
     main.conteiner.classList.remove('ocultar')
 }
 
-function AbrirTelaAdicionarTarefa() {
-    telaAdicionarTarefa.conteiner.classList.add('abrir') //Anotar sobre classList.add
-
-    main.conteiner.classList.add('ocultar')
-}
-
-function AbrirTelaAcessoTarefa() {
-    telaAcessoTarefa.conteiner.classList.add('abrir')
-
-    main.conteiner.classList.add('ocultar')
-}
 
 function FecharTelaAcessoTarefa() {
     telaAcessoTarefa.conteiner.classList.remove('abrir')
@@ -68,7 +69,7 @@ function salvarTarefa() {
         window.alert('O título da tarefa é obrigatório')
         telaAdicionarTarefa.txtTarefa.título.focus()
     } else {
-        FecharTelaAdicionarTarefa()
+        fecharTela(telaAdicionarTarefa)
         main.pNaoHaTarefas.style.display = 'none'
 
         //Guardar o nome da tarefa no vetor nomeDasTarefas
@@ -102,7 +103,7 @@ function salvarTarefa() {
 }
 
 function adicionarTarefa() {
-    AbrirTelaAdicionarTarefa()
+    abrirTela(telaAdicionarTarefa)
 
     telaAdicionarTarefa.txtTarefa.título.value = ""
     telaAdicionarTarefa.txtTarefa.horário.value = ""
@@ -121,7 +122,7 @@ function excluirTarefa(titulo) {
     tarefaParaExclusao.remove() //Anotar sobre remove()
     nomesDasTarefas.splice(nomesDasTarefas.indexOf(titulo),1) //Anotar sobre splice
 
-    FecharTelaAcessoTarefa()
+    fecharTela(telaAcessoTarefa)
 
     if (main.listaTarefas.children[0] == undefined) {
         main.pNaoHaTarefas.style.display = 'block'
@@ -137,7 +138,7 @@ function acessarTarefa(titulo,descricao) {
 
     telaAcessoTarefa.descricao.innerHTML = `<span>Descrição:</span><p>${descricao}</p>`
     
-    AbrirTelaAcessoTarefa()
+    abrirTela(telaAcessoTarefa)
 
     telaAcessoTarefa.botaoFechar.addEventListener('click',FecharTelaAcessoTarefa)
     telaAcessoTarefa.botaoExcluirTarefa.addEventListener('click',()=>excluirTarefa(titulo)) //Anotar sobre passagem de parâmetro via addEventListener
